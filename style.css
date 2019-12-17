@@ -1,0 +1,31 @@
+/* CSS files add styling rules to your content */
+
+body {
+    font-family: helvetica, arial, sans-serif;
+    margin: 2em;
+}
+
+h1 {
+    font-style: italic;
+    color: #373fff;
+}
+
+table {
+    visibility: hidden;
+}
+
+table.show{
+    visibility: visible;
+}
+
+td{
+    border: solid 1px cornflowerblue;
+    padding: 0.25em 1em;
+}
+
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+  
