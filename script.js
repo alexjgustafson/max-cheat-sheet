@@ -12,11 +12,24 @@ function getCommonPercentages(){
     return commonPercentages;
 }
 
+function addTableHeading(table){
+  let row = document.createElement('tr');
+  let addRowHeader = function(content, row){
+    let cell = document.createElement('th');
+    cell.append(content);
+    row.append(cell);
+  };
+  addRowHeader('%', row);
+  addRowHeader('Load', row);
+  table.append(row);
+};
+
 function hideRemoveAndShow(node){
     node.classList.remove('show');
     while (node.firstChild) {
         node.removeChild(node.firstChild);
     }
+    addTableHeading(node);
     node.classList.add('show');
 }
 
