@@ -23,6 +23,18 @@ td{
     padding: 0.25em 1em;
 }
 
+input{
+    border: solid 1px cornflowerblue;
+    font-size: 1.6rem;
+    max-width: 15rem;
+    padding: 0.25em;
+    width: 100%;
+}
+
+button{
+    font-size: 2rem;
+}
+
 
 .flex-column{
     display: flex;

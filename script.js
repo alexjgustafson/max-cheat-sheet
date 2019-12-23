@@ -19,8 +19,11 @@ function addTableHeading(table){
     cell.append(content);
     row.append(cell);
   };
-  addRowHeader('%', row);
+  addRowHeader('% of max', row);
   addRowHeader('Load', row);
+  addRowHeader('-45', row);
+  addRowHeader('-35', row);
+  addRowHeader('-15', row);
   table.append(row);
 };
 
@@ -41,11 +44,16 @@ document.querySelector('[data-action="calc"]').addEventListener('click', (e) => 
         var row = document.createElement('tr');
         var addRowCell = function(content, row){
             let cell = document.createElement('td');
-            cell.append(content);
+            let value = content < 0 ? '-' : content;
+            cell.append(value);
             row.append(cell);
         };
+        let load = Math.ceil(max * el.mult/5)*5;
         addRowCell(el.label, row);
-        addRowCell(Math.ceil(max * el.mult/5)*5, row);
+        addRowCell(load, row);
+        addRowCell(load-45, row);
+        addRowCell(load-35, row);
+        addRowCell(load-15, row);
         table.append(row);
     });
 })
